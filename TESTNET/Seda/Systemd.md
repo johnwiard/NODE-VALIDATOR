@@ -9,9 +9,9 @@ Run the node using systemd
 
 |   SPEC      |       Minimum             |
 | :---------: | :------------------------:|
-|   **CPU**   |        NA Cores           |
-|   **RAM**   |        32 GB              |
-| **Storage** |    1TB SSD or Nvme        |
+|   **CPU**   |        4 Cores           |
+|   **RAM**   |        8 GB              |
+| **Storage** |    160Gb SSD or Nvme        |
 
 |   SPEC      |       Recommend           |
 | :---------: | :------------------------:|
