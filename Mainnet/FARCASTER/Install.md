@@ -10,9 +10,6 @@ Min 140 GB Disk Space
 
 Ubuntu 22.04
 
-Contabo VPS 2 : 
-![image](https://github.com/CzLuckyStar/NODE-VALIDATOR/assets/130622293/aae01e29-1428-4721-86b8-90df771d41d7)
-
 
 ### Api Service : 
 
