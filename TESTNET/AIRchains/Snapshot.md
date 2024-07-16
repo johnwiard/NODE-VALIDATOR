@@ -11,9 +11,9 @@ cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator
 rm -rf $HOME/.junction/data
 ```
 
-## Download latest snapshot
+## Download latest snapshot (update daily)
 ```
-curl -o - -L https://snapshots.moonbridge.team/testnet/airchains/snapshot_latest.tar.lz4 | lz4 -dc - | tar -x -C $HOME/.junction
+curl -c - -o - -L https://config-t.noders.services/airchains/data.tar.lz4 | lz4 -d | tar -x -C $HOME/.junction 
 mv $HOME/.junction/priv_validator_state.json.backup $HOME/.junction/data/priv_validator_state.json
 ```
 
