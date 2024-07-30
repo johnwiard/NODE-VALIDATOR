@@ -1,1 +1,1 @@
-
+wget https://snapshot.syanodes.my.id/auto/testnet/empe_auto && chmod +x empe_auto && ./empe_auto 
