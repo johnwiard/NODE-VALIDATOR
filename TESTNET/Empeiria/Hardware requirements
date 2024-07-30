@@ -1,1 +1,17 @@
+Hardware requirements The following requirements are recommended for running EMPEIRIA:
 
+6 or more physical CPU cores
+
+At least 240 GB SSD disk storage
+
+At least 32GB of memory (RAM)
+
+At least 500mbps network bandwidth
+
+Also, we need to make sure the following requirements are met:
+
+Allow incoming connections on port 26656
+
+Have a static IP address
+
+Have access to the root user
