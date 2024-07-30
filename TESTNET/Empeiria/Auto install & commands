@@ -11,14 +11,15 @@ wget https://snapshot.syanodes.my.id/auto/testnet/empe_auto && chmod +x empe_aut
 
 # The node must be synchronized
 
-Copy
+```
 emped status | jq .SyncInfo.catching_up
-The command above should return
 
-Copy
+#The command above should return
+
+```
 false
 Own enough tokens.
-To become a validator you need at least 2 empe tokens to create the validator, and for transaction fee.  You can obtain your tokens from faucet: https://faucet-testnet.empe.io  
+# To become a validator you need at least 2 empe tokens to create the validator, and for transaction fee.  You can obtain your tokens from faucet: https://faucet-testnet.empe.io  
 
 # 1. Add wallet key
 # Inside the testnet you can use the Ledger, but you can also use the wallet software with the emped.
@@ -28,7 +29,7 @@ To become a validator you need at least 2 empe tokens to create the validator, a
 
 # Create the first wallet with the following command:
 
-Copy
+```
 emped keys add <KEY_NAME>
 # Enter a password that you can remember
 # The output of the command will provide the 24 words that are the mnemonic.
@@ -37,12 +38,12 @@ emped keys add <KEY_NAME>
 
 # If you are using the Ledger device you must first connect it to your computer, start the Cosmos application (on the device), and run the command
 
-Copy
+```
 emped keys add <KEY_NAME> --ledger
 # Enter a password that you can remember
 # In this case, the 12 words are not provided because they have already been configured in the Ledger initialization
 
-Copy
+```
 emped keys add validator
 Enter keyring passphrase:
 Re-enter keyring passphrase:
@@ -63,12 +64,12 @@ emped keys add vesting
 # Create Your Validator
 # Your empevalconspub consensus public key from tendermint can be used to create a new validator by staking tokens. You can find your validator pubkey by running:
 
-Copy
+```
 emped tendermint show-validator
 
 # To create your validator use the following command:
 
-Copy
+```
 emped tx staking create-validator \
   --amount=10000000uempe \
   --pubkey=$(emped tendermint show-validator) \
@@ -81,6 +82,7 @@ emped tx staking create-validator \
   --min-self-delegation="1000000" \
   --fees=20uempe \
   --from=<KEY_NAME>
+
 # When specifying commission parameters, the commission-max-change-rate is used to measure % point change over the commission-rate. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
 
 # You can confirm that you are in the validator set by using an explorer.
@@ -88,8 +90,9 @@ emped tx staking create-validator \
 # Confirm Your Validator is Running
 # Your validator is active if the following command returns anything:
 
-Copy
+```
 emped query tendermint-validator-set | grep "$(emped tendermint show-validator | jq .key  | tr -d \")"
+
 # You should now see your validator in one of the block explorers. You are looking for the bech32 encoded address in the ~/.emped-chain/config/priv_validator_key.json file.
 
 # To be in the validator set, you need to have more total voting power than the 50th validator.
